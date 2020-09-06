@@ -3,12 +3,10 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>JS TASK</title>
+    <title></title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- <link rel="stylesheet" href="styles.css"> -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 
 <body>
@@ -21,7 +19,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarText">
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
+                    <li class="nav-item">
                         <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
@@ -31,7 +29,7 @@
                         <a class="nav-link" href="planets.html">Planets</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="nilai.html">Nilai</a>
+                        <a class="nav-link active" href="nilai.html">Nilai</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="basic_arr.html">Array func</a>
@@ -45,17 +43,9 @@
     </header>
     <div class="container text-center">
         <div class="col-md-12">
-            <h3 id="text1">Lorem ipsum dolor sit amet 1</h3>
+            <h3 id="text1">Tugas percabangan</h3>
+            <button onclick="start()" class="btn btn-primary">Mulai</button>
         </div>
-        <div class="col-md-12">
-            <h3 id="text2">Lorem ipsum dolor sit amet 2</h3>
-        </div>
-        <div class="col-md-12">
-            <h3 id="text3">Lorem ipsum dolor sit amet 3</h3>
-        </div>
-        <button type="button" onclick="changeBackgroundColorToWhite()" class="btn btn-secondary">Make it white</button>
-        <button type="button" onclick="changeBackgroundColorToRed()" class="btn btn-danger">Make it red</button>
-
 
     </div>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -68,33 +58,24 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
     <script>
-        let text1 = document.getElementById("text1");
-        let text2 = document.getElementById("text2");
-        let text3 = document.getElementById("text3");
-        let isRed = false;
-        const colors = ["blue", "green", "orange", "yellow"];
-
-        function getRandomNumber() {
-            return Math.floor(Math.random() * 3);
+        function start() {
+            var num = prompt("Please enter a number betweet 1-100", "");
+            if (isNaN(num)) {
+                alert("Nilai is not valid");
+            } else {
+                if (num > 100 || num < 1) {
+                    alert("Nilai is not valid");
+                } else if (num >= 80 && num <= 100) {
+                    alert("Nilai anda A");
+                } else if (num >= 60 && num < 80) {
+                    alert("Nilai anda B");
+                } else if (num >= 40 && num < 60) {
+                    alert("Nilai anda C");
+                } else if (num < 40) {
+                    alert("Nilai anda D");
+                }
+            }
         }
-
-        function changeColor() {
-            text1.style.color = colors[getRandomNumber()];
-            text2.style.color = colors[getRandomNumber()];
-            text3.style.color = colors[getRandomNumber()];
-        }
-
-        function changeBackgroundColorToRed() {
-            document.body.style.backgroundColor = "red";
-        }
-        function changeBackgroundColorToWhite() {
-            document.body.style.backgroundColor = "white";
-        }
-
-        setInterval(() => {
-            changeColor();
-        }, 1000);
-
 
     </script>
 </body>

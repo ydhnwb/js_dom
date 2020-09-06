@@ -1,33 +1,47 @@
-let obj = {
-    name: 'Carrot',
-    "for": "Max",
-    details: {
-        color: "orange",
-        size: 12
-    }
+const input = ["0001", "Roman Alamsyah ", "Bandar Lampung", "21/05/1989", "Membaca"];
+
+function spliceData(data) {
+    data.splice(1, 1, "Roman Alamsyah Elsharawy")
+    data.splice(2, 1, "Provinsi Bandar Lampung")
+    data.splice(4, 1, "Pria", "SMA Metro")
+    return data
 }
 
-
-console.log(obj["for"]);
-console.log(obj.details.color);
-console.log(obj["details"]["size"]);
-
-
-let supermanObj = {
-    id: "1a2b3c",
-    name: "Superman",
-    age: 200,
-    favorites: [
-        "coding",
-        "reading",
-        {
-            sports: ["parkour", "hill climbing"]
-        }
-    ],
-    address: {
-        street: "Planet Krypton",
-        zipcode: 54321
+function numberToMonthName(data) {
+    let month = data[3].split("/")[1]
+    switch (month) {
+        case '01':
+            month = "January";
+            break;
+        case '05':
+            month = "May";
+            break;
+        default:
+            month = "Belum hehe";
     }
+    return month
 }
 
-console.log(supermanObj.favorites[2])
+function minTwoDigits(n) {
+    return (n < 10 ? '0' : '') + n;
+}
+
+function splitAMonth(data) {
+    let months = data[3].split("/")
+    let newarray = months.map(function(el) {
+        return parseInt(el)
+    })
+    newarray = newarray.sort((a,b)=>b-a)
+    newarray = newarray.map(minTwoDigits)
+    return newarray
+}
+
+function maximumLengthOfName(data){
+    data[1] = "Roman Alamsyah Elsharawy" 
+    return data[1].slice(0,15)
+}
+
+console.log(spliceData([...input]))
+console.log(numberToMonthName([...input]))
+console.log(splitAMonth([...input]))
+console.log(maximumLengthOfName([...input]))

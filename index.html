@@ -9,6 +9,7 @@
     <!-- <link rel="stylesheet" href="styles.css"> -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
 </head>
 
 <body>
@@ -53,6 +54,9 @@
         <div class="col-md-12">
             <h3 id="text3">Lorem ipsum dolor sit amet 3</h3>
         </div>
+        <div class="col-md-12">
+            <input type="color" id="colorPicker"></input>
+        </div>
         <button type="button" onclick="changeBackgroundColorToWhite()" class="btn btn-secondary">Make it white</button>
         <button type="button" onclick="changeBackgroundColorToRed()" class="btn btn-danger">Make it red</button>
 
@@ -68,11 +72,16 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
     <script>
+        let colorPicker = document.getElementById("colorPicker");
         let text1 = document.getElementById("text1");
         let text2 = document.getElementById("text2");
         let text3 = document.getElementById("text3");
         let isRed = false;
         const colors = ["blue", "green", "orange", "yellow"];
+
+        colorPicker.addEventListener("input", () => {
+            document.body.style.backgroundColor = colorPicker.value;
+        });
 
         function getRandomNumber() {
             return Math.floor(Math.random() * 3);

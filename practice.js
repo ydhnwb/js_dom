@@ -33,13 +33,21 @@ function splitAMonth(data) {
     })
     newarray = newarray.sort((a,b)=>b-a)
     newarray = newarray.map(minTwoDigits)
-    return newarray
+    str = newarray.join([separator = '-'])
+    console.log(newarray)
+    return str
 }
 
 function maximumLengthOfName(data){
     data[1] = "Roman Alamsyah Elsharawy" 
     return data[1].slice(0,15)
 }
+
+// function joinArr(data){
+//     date = data[3].split("/")
+//     str = date.join([separator = '-'])
+//     return 
+// }
 
 console.log(spliceData([...input]))
 console.log(numberToMonthName([...input]))

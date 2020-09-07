@@ -57,8 +57,7 @@
         <div class="col-md-12">
             <input type="color" id="colorPicker"></input>
         </div>
-        <button type="button" onclick="changeBackgroundColorToWhite()" class="btn btn-secondary">Make it white</button>
-        <button type="button" onclick="changeBackgroundColorToRed()" class="btn btn-danger">Make it red</button>
+
 
 
     </div>
@@ -93,12 +92,6 @@
             text3.style.color = colors[getRandomNumber()];
         }
 
-        function changeBackgroundColorToRed() {
-            document.body.style.backgroundColor = "red";
-        }
-        function changeBackgroundColorToWhite() {
-            document.body.style.backgroundColor = "white";
-        }
 
         setInterval(() => {
             changeColor();

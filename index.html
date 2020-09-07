@@ -57,6 +57,9 @@
         <div class="col-md-12">
             <input type="color" id="colorPicker"></input>
         </div>
+        <div class="col-md-12">
+            <input type="color" id="colorPickerText"></input>
+        </div>
 
 
 
@@ -72,14 +75,19 @@
         crossorigin="anonymous"></script>
     <script>
         let colorPicker = document.getElementById("colorPicker");
+        let colorPickerText = document.getElementById("colorPickerText");
         let text1 = document.getElementById("text1");
         let text2 = document.getElementById("text2");
         let text3 = document.getElementById("text3");
-        let isRed = false;
+
         const colors = ["blue", "green", "orange", "yellow"];
 
         colorPicker.addEventListener("input", () => {
             document.body.style.backgroundColor = colorPicker.value;
+        });
+
+        colorPickerText.addEventListener("input", () => {
+            text1.style.color = colorPickerText.value;
         });
 
         function getRandomNumber() {
@@ -87,7 +95,6 @@
         }
 
         function changeColor() {
-            text1.style.color = colors[getRandomNumber()];
             text2.style.color = colors[getRandomNumber()];
             text3.style.color = colors[getRandomNumber()];
         }
